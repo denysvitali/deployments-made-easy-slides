@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.main-subtitle {
+  font-style: italic;
+}
+
+img.profile-picture {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 300px;
+}
+
+a, a:visited {
+  color: #fff;
+}
+
+.aboutMe .name {
+  font-weight: 500;
+  font-size: 60px;
+}
+
+.aboutMe .social-links a {
+  padding-left: 15px;
+}
+
+.aboutMe .role {
+  font-size: 36px;
+  font-style: italic;
+}
+
+img.inline-logo {
+  display: inline-block;
+  height: 150px;
+}
