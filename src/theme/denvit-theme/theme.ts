@@ -1,10 +1,10 @@
 import { defaultTheme } from 'spectacle';
 
-let themeOptions: typeof defaultTheme = {
+const themeOptions: typeof defaultTheme = {
     colors: {
         primary: '#fff',
         secondary: '#fff',
-        tertiary: "#001155"
+        tertiary: "#37474F"
     },
     fonts: {
         header: '"Noto Sans", Helvetica, Arial',
@@ -14,7 +14,7 @@ let themeOptions: typeof defaultTheme = {
     size: {
         
     },
-    space: [16, 24, 32],
+    space: [16, 24, 16, 4],
     fontSizes: {
         h1: '72px',
         h2: '64px',
