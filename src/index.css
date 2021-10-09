@@ -18,6 +18,7 @@ img.profile-picture {
   width: 300px;
   height: 300px;
   border-radius: 300px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 a, a:visited {
@@ -31,6 +32,7 @@ a, a:visited {
 
 .aboutMe .social-links a {
   padding-left: 15px;
+  font-size: 0.7em;
 }
 
 .aboutMe .role {
@@ -41,4 +43,15 @@ a, a:visited {
 img.inline-logo {
   display: inline-block;
   height: 150px;
+}
+
+.hashicorp-inline-logo {
+  display: inline-block;
+  height: 44px;
+  margin-top: 5px;
+}
+
+div.text-no-padding-left {
+  margin-left: 0;
+  padding-left: 0;
 }
