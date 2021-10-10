@@ -1,0 +1,13 @@
+diff --git a/index.d.ts b/index.d.ts
+index a721bbb..02c6508 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -90,7 +90,7 @@ declare module 'spectacle' {
+     language: string;
+     theme?: Record<string, unknown>;
+     stepIndex?: number;
+-    highlightRanges?: number | number[];
++    highlightRanges?: number | (number | number[])[];
+     showLineNumbers?: boolean;
+   }>;
+ 
