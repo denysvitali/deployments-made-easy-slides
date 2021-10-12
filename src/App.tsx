@@ -12,6 +12,7 @@ import {
   UnorderedList,
   Progress,
   SlideTransition,
+  OrderedList,
 } from 'spectacle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -61,6 +62,7 @@ const transition: SlideTransition = {
 const swisscomNavyBlue = "#001155";
 
 function App(): JSX.Element {
+  // react/no-unescaped-entities
   return (
     <Deck theme={denvit} template={template} transition={transition}>
       <Slide>
@@ -266,7 +268,15 @@ function App(): JSX.Element {
         </Notes>
       </Slide>
 
-      <BigTitleSeparator>Is there a solution to this problem?</BigTitleSeparator>
+      <Slide>
+        <Heading>Imagine...</Heading>
+        <FlexBox>
+          <img src="pictures/wp1.png" width="80%" alt="Example project on GitHub"/>
+        </FlexBox>
+        <Notes>
+          Picture the situation: you find a cool project on GitHub and you want to test it right away...
+        </Notes>
+      </Slide>
 
       <Slide>
         <Heading>
@@ -296,19 +306,42 @@ function App(): JSX.Element {
           <ListItem>
             Build, Deployment and Release tool
           </ListItem>
+          <ListItem>
+            A new workflow tool
+          </ListItem>
         </UnorderedList>
       </Slide>
       <Slide>
         <Heading>
-          <img
-            src="logos/waypoint-color-white.svg"
-            height="200"
-            alt="Hashicorp Waypoint Logo"
-          />
+          Waypoint Goals
         </Heading>
         <FlexBox>
-          <Text>A</Text>
+          <OrderedList>
+            <ListItem>Consistency of Workflows</ListItem>
+            <ListItem>Confidence in Deployment</ListItem>
+            <ListItem>Extensibility with the Ecosystem</ListItem>
+          </OrderedList>
         </FlexBox>
+        <Notes>
+        1. Waypoint aims to provide an easy-to-use, consistent workflow for getting applications from development to production: waypoint up <br/>
+        2. Waypoint provides tools such as logs and exec to give you confidence that deployments succeed. <br/>
+        3. Waypoint is fully extensible via a plugin system
+        </Notes>
+      </Slide>
+      <Slide>
+        <Heading>
+          <code>waypoint up</code>
+        </Heading>
+        <FlexBox>
+          <UnorderedList>
+            <ListItem><code>waypoint build</code></ListItem>
+            <ListItem><code>waypoint deploy</code></ListItem>
+            <ListItem><code>waypoint release</code></ListItem>
+          </UnorderedList>
+        </FlexBox>
+        <Notes>
+        Running "waypoint up" is exactly the same as running the three commands "build", "deploy" and "release" - one after the other.
+        </Notes>
       </Slide>
       <Slide>
         <Heading>waypoint.hcl</Heading>
@@ -336,6 +369,71 @@ function App(): JSX.Element {
         `}
         </CodePane>
       </Slide>
+
+
+      <Slide>
+        <Heading>These slides' <code>waypoint.hcl</code></Heading>
+        <CodePane
+          language="hcl"
+          theme={tomorrow}
+          highlightRanges={
+          [1, 3, [4, 15], [5,7], [9, 14], [18, 30], [19, 29]]
+        }
+        >
+          {`
+          project = "waypoint-slides"
+          
+          app "slides" {
+              build {
+                  use "docker" {
+                    disable_entrypoint = true
+                  }
+          
+                  registry {
+                    use "docker" {
+                      image = "dvitali/waypoint-slides"
+                      tag = "latest"
+                    }
+                  }
+              }
+          
+              # Deploy to Kubernetes
+              deploy {
+                  use "kubernetes" {
+                    service_port = 80
+                    replicas = 3
+                    namespace = "denvit-waypoint-example"
+                    resources = {
+                      limits_cpu = "100m"
+                      limits_memory = "64Mi"
+                      requests_cpu = "10m"
+                      requests_memory = "16Mi"
+                    }
+                  }
+              }
+          }
+        `}
+        </CodePane>
+      </Slide>
+
+      <Slide>
+          <Heading>Plugin System</Heading>
+          <FlexBox height="100%">
+            <img src="pictures/wp2.png" height="400px" alt="Plugin list on Waypoint website"/>
+          </FlexBox>
+      </Slide>
+
+      <Slide>
+          <Heading><code>waypoint-plugin-cloudfoundry</code></Heading>
+          <FlexBox flexDirection="column">
+            <Text>... and if you use Cloud Foundry</Text>
+            <img src="pictures/wp3.png" height="300px" alt="Swisscom open source plugin for Cloud Foundry"/>
+          </FlexBox>
+      </Slide>
+
+      <BigTitleSeparator>Demo Time 🧑‍💻</BigTitleSeparator>
+      <BigTitleSeparator>Q &amp; A</BigTitleSeparator>
+      <BigTitleSeparator>Thank you for your attention!</BigTitleSeparator>
 
     </Deck>
   );
