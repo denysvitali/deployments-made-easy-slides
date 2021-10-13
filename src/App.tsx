@@ -431,6 +431,20 @@ function App(): JSX.Element {
           </FlexBox>
       </Slide>
 
+      <Slide>
+          <Heading>Waypoint Server UI</Heading>
+          <FlexBox flexDirection="column" justifyContent="center">
+            <img src="pictures/wp-4.png" alt="Waypoint Server (UI)" width="100%"/>
+          </FlexBox>
+      </Slide>
+
+      <Slide>
+          <Heading>Waypoint Server UI (2)</Heading>
+          <FlexBox flexDirection="column" justifyContent="center">
+            <img src="pictures/wp-5.png" alt="Waypoint Server (UI)" width="100%"/>
+          </FlexBox>
+      </Slide>
+
       <BigTitleSeparator>Demo Time 🧑‍💻</BigTitleSeparator>
       <BigTitleSeparator>Q &amp; A</BigTitleSeparator>
       <BigTitleSeparator>Thank you for your attention!</BigTitleSeparator>
