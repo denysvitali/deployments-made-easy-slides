@@ -54,3 +54,21 @@ div.text-no-padding-left {
   margin-left: 0;
   padding-left: 0;
 }
+
+div.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+p.padding-right {
+  padding-right: 24px;
+}
+
+p.padding-left {
+  padding-left: 24px;
+}
+
+p.no-margin {
+  margin: 0;
+}

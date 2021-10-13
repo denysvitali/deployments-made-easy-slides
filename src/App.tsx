@@ -292,22 +292,22 @@ function App(): JSX.Element {
         </Heading>
         <UnorderedList>
           <ListItem>
-            <FlexBox justifyContent="start">
-              <Text className="text-no-padding-left">An</Text>
+            <div className="flex-row">
+              <p className="padding-right no-margin">A</p>
               <img
                 src="logos/hashicorp-logo-white.svg"
                 height="44"
                 className="hashicorp-inline-logo"
                 alt="Hashicorp Logo"
               />
-              <Text>product</Text>
-            </FlexBox>
+              <p className="padding-left no-margin">product</p>
+            </div>
           </ListItem>
           <ListItem>
-            Build, Deployment and Release tool
+            A new workflow: Build, Deploy, Release
           </ListItem>
           <ListItem>
-            A new workflow tool
+            GitOps tool
           </ListItem>
         </UnorderedList>
       </Slide>
